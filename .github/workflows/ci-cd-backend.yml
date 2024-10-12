@@ -1,0 +1,41 @@
+name: CI/CD Pipeline for Azure Backend
+
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch name
+  pull_request:
+    branches:
+      - main  # Change this to your main branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # Change this if you are using a different Node.js version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build application
+        run: npm run build  # Adjust this command if necessary
+
+      - name: Deploy to Azure
+        env:
+          AZURE_FUNCTIONAPP_NAME: your-function-app-name
+          AZURE_RESOURCE_GROUP: your-resource-group
+          AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}  # Store your Azure credentials in GitHub secrets
+        run: |
+          echo "Deploying to Azure Function App..."
+          npm run deploy  # Adjust this command if necessary to match your deployment script
+

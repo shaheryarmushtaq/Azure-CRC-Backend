@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sites_sheriCanadaCentral_name": {
+            "value": null
+        },
+        "dnszones_shaheryar_site_name": {
+            "value": null
+        },
+        "storageAccounts_shaheryarcrc_name": {
+            "value": null
+        },
+        "databaseAccounts_shaheryar_name": {
+            "value": null
+        },
+        "serverfarms_ASP_sheriCanadaCentral_60d9_name": {
+            "value": null
+        },
+        "serverfarms_ASP_sheriCanadaCentral_b3ad_name": {
+            "value": null
+        }
+    }
+}
